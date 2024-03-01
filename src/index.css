@@ -1,5 +1,5 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 
   margin: 0;
   padding: 0;
@@ -9,4 +9,20 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --primary: #43c0ff;
+  --secondary: #bcddfe;
+  --white: #ffff;
+  --black: black;
+  --red: #ff4858;
+  --grey-bg: #ebebeb;
+  --light-text: #c1c8ce;
+  --border: #f4f4f4;
+
+  --font-300: 300;
+  --font-400: 400;
+  --font-500: 500;
+  --font-700: 700;
 }
