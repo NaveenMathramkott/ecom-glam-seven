@@ -1,0 +1,18 @@
+#logo-mainWrapper {
+  max-width: 96px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#logo-mainWrapper > .app-logo {
+  width: 28px;
+  padding-right: 4px;
+}
+#logo-mainWrapper > .app-logo-small {
+  width: 20px;
+  padding-right: 4px;
+}
+#logo-mainWrapper > span {
+  font-size: 14px;
+  font-weight: 700;
+}
