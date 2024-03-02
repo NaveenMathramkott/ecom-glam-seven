@@ -3,7 +3,7 @@ import {
   FaShippingFast,
   MdSupportAgent,
   RiRefund2Line,
-} from "../../components/icons/icons.js";
+} from "../../../components/icons/icons.js";
 import "./customerCareStyle.css";
 
 const CustomerCare = () => {

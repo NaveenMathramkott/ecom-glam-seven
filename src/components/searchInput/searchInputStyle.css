@@ -1,7 +1,7 @@
 #search-input-mainWrapper {
   width: clamp(7rem, 500px, 500px);
   margin: auto;
-  height: 35px;
+  height: 45px;
   display: flex;
   flex-wrap: nowrap;
   position: relative;
@@ -15,6 +15,9 @@
   border-right: none;
   outline: none;
   border-radius: 4px 0 0 4px;
+}
+#search-input-mainWrapper > input::placeholder {
+  color: var(--light-text);
 }
 
 #search-input-mainWrapper > button {

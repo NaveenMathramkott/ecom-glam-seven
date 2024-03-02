@@ -1,5 +1,5 @@
-import ProductCard from "../../components/productCard/ProductCard";
-import ProductTab from "../../components/productTab/ProductTab";
+import ProductCard from "../../../components/productCard/ProductCard";
+import ProductTab from "../../../components/productTab/ProductTab";
 import "./bestSellerStyle.css";
 const MENU_LIST = [
   { name: "All", to: "/" },

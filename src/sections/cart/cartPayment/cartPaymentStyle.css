@@ -1,0 +1,15 @@
+.cart-payment-mainWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3rem;
+}
+
+@media screen and (max-width: 916px) {
+  .cart-payment-mainWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+  }
+}
