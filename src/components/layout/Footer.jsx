@@ -1,5 +1,4 @@
 import Logo from "../logo/Logo";
-import "./style.css";
 import { FaTwitter, TiSocialFacebook } from "../icons/icons.js";
 import { western, visa, master, paypal } from "../../assets/images/images.js";
 

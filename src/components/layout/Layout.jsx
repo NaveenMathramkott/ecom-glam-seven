@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "./Header";
 import Footer from "./Footer";
-import "./style.css";
+import "./layoutStyle.css";
 
 const Layout = ({ children, title, description, keywords, author }) => {
   return (

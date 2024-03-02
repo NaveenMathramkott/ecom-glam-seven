@@ -1,0 +1,45 @@
+#search-input-mainWrapper {
+  width: clamp(7rem, 500px, 500px);
+  margin: auto;
+  height: 35px;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+#search-input-mainWrapper > input {
+  min-width: 80%;
+  height: 100%;
+  border: none;
+  padding: 10px;
+  border: 2px solid var(--secondary);
+  border-right: none;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+}
+
+#search-input-mainWrapper > button {
+  width: 20%;
+  height: 100%;
+  border: none;
+  background-color: var(--primary);
+  font-size: 1rem;
+  font-weight: var(--font-500);
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+#search-input-option {
+  position: absolute;
+  background-color: var(--primary);
+  max-height: 140px;
+  overflow-y: scroll;
+  top: 40px;
+  left: 6px;
+  width: 78%;
+  border-radius: 3px;
+  padding: 3px;
+  z-index: 999;
+  cursor: pointer;
+  color: var(--white);
+}

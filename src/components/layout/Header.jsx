@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   FaRegUser,
-  IoCartOutline,
+  MdOutlineShoppingCart,
   IoIosSearch,
   GiHamburgerMenu,
   IoMdClose,
@@ -54,7 +54,7 @@ const Header = () => {
             <li>
               <Badge count={2}>
                 <Link className="link-text" to={"cart"}>
-                  <IoCartOutline size={"18px"} />
+                  <MdOutlineShoppingCart size={"18px"} />
                 </Link>
               </Badge>
             </li>

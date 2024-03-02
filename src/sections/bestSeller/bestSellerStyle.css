@@ -1,0 +1,26 @@
+#bestSeller-mainWrapper {
+  padding: var(--page-cont);
+}
+#best-seller-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+#best-seller-header > span {
+  font-weight: var(--font-600);
+  font-size: 22px;
+}
+
+#best-seller-product-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.best-teller-product-tab {
+  padding-bottom: 1.5rem;
+}

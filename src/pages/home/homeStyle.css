@@ -1,0 +1,20 @@
+.spacer-top {
+  margin-top: 8rem;
+  width: 100%;
+}
+.spacer-bottom {
+  margin-bottom: 8rem;
+  width: 100%;
+}
+.spacer {
+  padding: 8rem 0;
+  width: 100%;
+}
+
+.spacer-search-input {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
