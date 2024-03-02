@@ -1,4 +1,4 @@
-import FeaturedProductCard from "../../components/featuredProduct/FeaturedProductCard";
+import FeaturedProductCard from "../../../components/featuredProduct/FeaturedProductCard";
 import "./featuredProductStyle.css";
 
 const FeaturedProduct = () => {

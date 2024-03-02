@@ -1,0 +1,15 @@
+#cart-table-content-sec,
+#cart-payment-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 6rem;
+}
+
+/* ------------mobile view---------------------- */
+
+@media screen and (max-width: 780px) {
+  #cart-table-content-sec {
+    padding: 1rem 1rem;
+  }
+}

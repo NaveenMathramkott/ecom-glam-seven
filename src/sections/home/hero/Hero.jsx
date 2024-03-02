@@ -1,5 +1,5 @@
 import "./heroStyle.css";
-import { bannerImg } from "../../assets/images/images.js";
+import { bannerImg } from "../../../assets/images/images.js";
 
 const Hero = () => {
   return (

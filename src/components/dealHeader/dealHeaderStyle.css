@@ -1,0 +1,19 @@
+#deal-header-mainWrapper {
+  background-color: var(--line-border);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: var(--font-400);
+}
+#deal-header-mainWrapper > span:nth-child(1),
+#deal-header-mainWrapper > span:nth-child(3) {
+  color: var(--text-primary);
+}
+#deal-header-mainWrapper > span:nth-child(2),
+#deal-header-mainWrapper > span:nth-child(4) {
+  color: var(--light-text);
+  font-size: 10px !important;
+}

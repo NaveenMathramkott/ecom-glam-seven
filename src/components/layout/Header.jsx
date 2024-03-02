@@ -6,9 +6,10 @@ import {
   GiHamburgerMenu,
   IoMdClose,
 } from "../icons/icons.js";
-import { Link } from "react-router-dom";
 import Badge from "../badge/Badge.jsx";
 import Logo from "../logo/Logo.jsx";
+
+import { Link } from "react-router-dom";
 
 const MENU_LIST = [
   { name: "HOME", to: "/" },

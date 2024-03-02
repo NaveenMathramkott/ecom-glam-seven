@@ -1,12 +1,12 @@
 import "./homeStyle.css";
-import Layout from "../../components/layout/Layout";
-import BannerCard from "../../sections/banner/BannerCard";
-import BestSellerPage from "../../sections/bestSeller/BestSellerPage";
-import CustomerCare from "../../sections/customerCare/CustomerCare.jsx";
-import FeaturedProduct from "../../sections/featuredProduct/FeaturedProduct.jsx";
+import Hero from "../../sections/home/hero/Hero.jsx";
 import SearchInput from "../../components/searchInput/SearchInput.jsx";
 import { useState } from "react";
-import Hero from "../../sections/hero/Hero.jsx";
+import Layout from "../../components/layout/Layout.jsx";
+import BestSellerPage from "../../sections/home/bestSeller/BestSellerPage.jsx";
+import BannerCard from "../../sections/home/banner/BannerCard.jsx";
+import CustomerCare from "../../sections/home/customerCare/CustomerCare.jsx";
+import FeaturedProduct from "../../sections/home/featuredProduct/FeaturedProduct.jsx";
 
 const HomePage = () => {
   const [option, setOption] = useState([]);
@@ -15,7 +15,7 @@ const HomePage = () => {
     setOption([...option, data]);
   };
   return (
-    <Layout title={`E-com.ae shop online fashion with Glam seven`}>
+    <Layout title={`E-comm.ae shop online fashion with Glam seven`}>
       <div>
         <Hero />
       </div>

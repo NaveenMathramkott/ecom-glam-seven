@@ -1,0 +1,28 @@
+#payment-card-mainWrapper {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+#payment-card-mainWrapper > div {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: var(--font-400);
+}
+#payment-card-mainWrapper > div:nth-child(4) {
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  font-weight: var(--font-500);
+  border-top: 2px solid var(--line-border);
+}
+#payment-card-mainWrapper > button {
+  border: none;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: var(--font-500);
+  color: var(--white);
+  background-color: var(--text-primary);
+  border-radius: 2px;
+}

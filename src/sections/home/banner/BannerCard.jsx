@@ -1,5 +1,5 @@
 import "./bannerStyle.css";
-import { shoeImg } from "../../assets/images/images";
+import { shoeImg } from "../../../assets/images/images";
 
 const BannerCard = () => {
   return (
