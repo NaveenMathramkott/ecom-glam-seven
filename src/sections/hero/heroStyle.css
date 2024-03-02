@@ -1,0 +1,29 @@
+#hero-sec-mainWrapper {
+  position: relative;
+}
+#hero-sec-mainWrapper > div {
+  max-width: 500px;
+  position: absolute;
+  font-weight: var(--font-700);
+  font-size: 3rem;
+  color: var(--white);
+  top: 16rem;
+  left: 6rem;
+}
+
+#hero-sec-image {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 770px) {
+  #hero-sec-mainWrapper > div {
+    font-weight: var(--font-700);
+    font-size: 2rem;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,13 @@
+#rate-mainWrapper {
+  width: 72px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#rate-radio-input {
+  display: none;
+}
+
+#rate-star-style {
+  font-size: 14px;
+}

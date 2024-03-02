@@ -12,17 +12,26 @@
 }
 
 :root {
-  --primary: #43c0ff;
+  --primary: #40bfff;
   --secondary: #bcddfe;
   --white: #ffff;
-  --black: black;
+  --black: #22262a;
+  --text-dark: #223263;
   --red: #ff4858;
+  --red-sec: #fb7181;
+  --red-3: #ff6875;
   --grey-bg: #ebebeb;
   --light-text: #c1c8ce;
   --border: #f4f4f4;
+  --gray-bg: #e6e7eb;
+  --text-light: #9098b1;
+  --line-border: #f6f7f8;
 
   --font-300: 300;
   --font-400: 400;
   --font-500: 500;
+  --font-600: 600;
   --font-700: 700;
+
+  --page-cont: 1rem 3rem;
 }
