@@ -7,7 +7,7 @@
   margin-top: 6px;
 }
 
-/* -------------------header-top-css---------------------- */
+/* -------------------header-top-section---------------------- */
 
 #top-head-wrapper {
   padding: 0 100px;
@@ -44,6 +44,7 @@
 }
 .link-icon {
   font-size: 1.2rem;
+  cursor: pointer;
 }
 .mobile-btn {
   display: none;
@@ -56,9 +57,6 @@
   #top-head-wrapper {
     padding: 0 10px;
     height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     position: relative;
   }
   #top-head-middle-sec-mobile {
@@ -105,7 +103,7 @@
   }
 }
 
-/* ----------------head-bottom-css--------------------- */
+/* ----------------head-bottom-section--------------------- */
 
 #bottom-head-wrapper {
   padding: 0 6rem;
@@ -147,18 +145,12 @@
   #bottom-head-wrapper {
     padding: 1rem;
     height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 }
 @media screen and (max-width: 439px) {
   #bottom-head-wrapper {
     padding: 0.8rem;
     height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-direction: column;
   }
   #bottom-head-right-sec {

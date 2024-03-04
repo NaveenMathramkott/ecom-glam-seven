@@ -49,7 +49,6 @@
   .banner-right-section > img {
     width: 28rem;
     height: 28rem;
-    position: absolute;
     top: -90px;
     right: 10px;
     transition: all ease-in-out 3s;
@@ -59,7 +58,6 @@
   .banner-right-section > img {
     width: 20rem;
     height: 14rem;
-    position: absolute;
     top: -20px;
     right: 0px;
     transition: all ease-in-out 3s;
@@ -69,12 +67,6 @@
 @media screen and (max-width: 688px) {
   .banner-mainWrapper {
     height: 400px;
-    background-color: var(--primary);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    position: relative;
     padding: 0 30px;
   }
   .banner-right-section {

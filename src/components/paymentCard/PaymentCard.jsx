@@ -30,7 +30,10 @@ const PaymentCard = ({ subTotal = 0, coupon, shipCharge = 0 }) => {
           {convertSelectedCurrency(roundToTwo(total), selectedCurrency)}
         </span>
       </div>
-      <button onClick={() => toast.success(`Checkout Completed`)}>
+      <button
+        onClick={() => toast.success(`Checkout Completed`)}
+        disabled={subTotal === 0}
+      >
         Check Out
       </button>
     </div>

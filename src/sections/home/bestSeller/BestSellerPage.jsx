@@ -1,17 +1,17 @@
+import "./bestSellerStyle.css";
 import { useEffect, useState } from "react";
 import ProductCard from "../../../components/productCard/ProductCard";
 import ProductTab from "../../../components/productTab/ProductTab";
 import { ProductSkeleton } from "../../../components/skeleton/Skeleton";
 import { useFetch } from "../../../hooks/hooks";
-import "./bestSellerStyle.css";
 import { getApiCall } from "../../../utils/utils";
 
 const BestSellerPage = () => {
+  const [products, setProducts] = useState([]);
   const categories = useFetch(
     `${import.meta.env.VITE_BASE_URL}/products/categories`,
     "GET"
   );
-  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getCateProduct("all");
@@ -40,11 +40,9 @@ const BestSellerPage = () => {
           />
         </div>
         <div id="best-seller-product-list">
-          {products.loading
-            ? [...Array(8)].map((itm) => <ProductSkeleton key={itm} />)
-            : products?.map((item) => (
-                <ProductCard key={item.id} data={item} />
-              ))}
+          {products.length > 0
+            ? products?.map((item) => <ProductCard key={item.id} data={item} />)
+            : [...Array(8)].map((itm, ind) => <ProductSkeleton key={ind} />)}
         </div>
       </div>
     </div>

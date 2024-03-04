@@ -12,6 +12,10 @@ const CartPage = () => {
   const [total, setTotal] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const totalCount = cart.map((item) => item.data.price * item.count);
     setTotal(totalCount);
   }, [cart]);
@@ -22,7 +26,7 @@ const CartPage = () => {
     <Layout title={`Cart-ecomm glam seven`}>
       <DealHeader
         name={
-          cart.length > 0 ? textShorter(cart[0].data.title, 50) : `No items`
+          cart.length > 0 ? textShorter(cart[0]?.data?.title, 50) : `No items`
         }
       />
       <div id="cart-table-content-sec">

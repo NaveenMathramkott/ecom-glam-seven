@@ -20,6 +20,7 @@ const ProductDetailPage = () => {
   const [data, setData] = useState(location.state);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (params?.id) getSingleProduct();
   }, []);
 
@@ -28,7 +29,6 @@ const ProductDetailPage = () => {
       `${import.meta.env.VITE_BASE_URL}/products/${params?.id}`
     );
     setData(response);
-    console.log("data transfer", response);
   };
 
   const onAddToCart = (prod) => {
@@ -44,7 +44,7 @@ const ProductDetailPage = () => {
   };
 
   return (
-    <Layout title={`product page`}>
+    <Layout title={`${data?.title} product page`}>
       {data !== undefined ? (
         <div id="product-detail-mainWrapper">
           <div id="product-detail-left-sec">
