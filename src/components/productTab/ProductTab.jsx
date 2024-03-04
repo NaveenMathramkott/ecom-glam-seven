@@ -1,14 +1,7 @@
-import { useState } from "react";
 import { HeaderSkeleton } from "../skeleton/Skeleton";
 import "./productTabStyle.css";
 
 const ProductTab = ({ dataList, onClick, isLoading }) => {
-  const [selectedTab, setSelectedTab] = useState();
-  const onSelect = (item) => {
-    setSelectedTab(item);
-    onClick(item);
-    console.log("selected", selectedTab, item);
-  };
   return (
     <div className="productTab-mainWrapper">
       {isLoading ? (
@@ -20,20 +13,16 @@ const ProductTab = ({ dataList, onClick, isLoading }) => {
       ) : (
         <>
           <button
-            className={`product-tab-header-list-btn ${
-              selectedTab === "all" ? ".active-tab" : ""
-            }`}
+            className={`product-tab-header-list-btn `}
             onClick={() => onClick("all")}
           >
             All
           </button>
           {dataList?.map((item, ind) => (
             <button
-              className={`product-tab-header-list-btn ${
-                selectedTab === item ? ".active-tab" : ""
-              }`}
+              className={`product-tab-header-list-btn `}
               key={ind}
-              onClick={() => onSelect(item)}
+              onClick={() => onClick(item)}
             >
               {item.toUpperCase(0)}
             </button>

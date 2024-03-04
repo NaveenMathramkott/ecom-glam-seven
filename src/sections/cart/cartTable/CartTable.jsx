@@ -31,7 +31,6 @@ const CartTable = () => {
         return itm;
       } else if (itm.data.id !== id) return itm;
     });
-    console.log("deleted product", filteredData);
     setCart(filteredData);
     localStorage.setItem("ecom-cart", JSON.stringify(filteredData));
   };
