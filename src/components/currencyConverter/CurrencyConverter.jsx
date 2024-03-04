@@ -10,10 +10,11 @@ const CurrencyConverter = () => {
 
   useEffect(() => {
     const currencyInStore = localStorage.getItem("ecom-currency");
-    const inStore = JSON.parse(currencyInStore);
-    setCurrentCurrency(Object.keys(inStore[0]));
-    if (inStore?.length === 0) {
+    if (currencyInStore == null) {
       getCurrentRate("USD");
+    } else {
+      const inStore = JSON.parse(currencyInStore);
+      setCurrentCurrency(Object.keys(inStore[0]));
     }
   }, []);
 
