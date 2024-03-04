@@ -10,17 +10,18 @@
 }
 #best-seller-header > span {
   font-weight: var(--font-600);
-  font-size: 22px;
+  font-size: 2rem;
 }
 
 #best-seller-product-list {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .best-teller-product-tab {
   padding-bottom: 1.5rem;
+  min-height: 4rem;
 }

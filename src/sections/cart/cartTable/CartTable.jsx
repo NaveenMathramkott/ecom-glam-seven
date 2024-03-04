@@ -1,7 +1,47 @@
 import "./cartTableStyle.css";
 import { IoMdClose } from "../../../components/icons/icons.js";
+import { useCart } from "../../../context/cartProvider.jsx";
+import {
+  convertSelectedCurrency,
+  roundToTwo,
+  textShorter,
+} from "../../../utils/utils.js";
+import { useCurrency } from "../../../context/currencyProvider.jsx";
 
-const CartTable = ({ cartItem = [...Array(4)] }) => {
+const CartTable = () => {
+  const count = 1;
+  const [cart, setCart] = useCart();
+  const [selectedCurrency] = useCurrency();
+
+  const addItem = (id) => {
+    const selectedProduct = cart.filter((itm) => {
+      if (itm.data.id === id) {
+        itm.count += count;
+      }
+      return itm;
+    });
+
+    setCart(selectedProduct);
+    localStorage.setItem("ecom-cart", JSON.stringify(selectedProduct));
+  };
+  const removeItem = (id) => {
+    const filteredData = cart?.filter((itm) => {
+      if (itm.data.id === id && itm.count !== 1) {
+        itm.count -= count;
+        return itm;
+      } else if (itm.data.id !== id) return itm;
+    });
+    console.log("deleted product", filteredData);
+    setCart(filteredData);
+    localStorage.setItem("ecom-cart", JSON.stringify(filteredData));
+  };
+
+  const onClearProduct = (id) => {
+    const filteredData = cart?.filter((itm) => itm.data.id !== id);
+    setCart(filteredData);
+    localStorage.setItem("ecom-cart", JSON.stringify(filteredData));
+  };
+
   return (
     <div id="cart-table-mainWrapper">
       <div id="cart-table-header-sec">
@@ -15,34 +55,37 @@ const CartTable = ({ cartItem = [...Array(4)] }) => {
         </div>
       </div>
       <div>
-        {cartItem?.map((itm, ind) => (
-          <div key={ind} className="cart-item-data-list">
-            <div className="cart-item-data-left">
-              <button>
-                <IoMdClose />
-              </button>
-              <img src="https://i.pinimg.com/564x/22/05/70/2205706d28ee46d9fbaa8b4b41c92835.jpg" />
-              <span>product name</span>
-            </div>
-            <div className="cart-item-data-right">
-              <div>$499</div>
-              <div id="cart-add-btn-sec">
-                <button
-                // onClick={() => removeItem(item._id)}
-                >
-                  -
+        {cart.length > 0 ? (
+          cart?.map((item) => (
+            <div key={item.data.id} className="cart-item-data-list">
+              <div className="cart-item-data-left">
+                <button onClick={() => onClearProduct(item.data.id)}>
+                  <IoMdClose />
                 </button>
-                <span>12</span>
-                <button
-                // onClick={() => addItem(item._id)}
-                >
-                  +
-                </button>
+                <img src={item.data.image} alt={item.data.name} />
+                <span>{textShorter(item.data.title, 50)}</span>
               </div>
-              <div>$899</div>
+              <div className="cart-item-data-right">
+                <div>
+                  {convertSelectedCurrency(
+                    roundToTwo(item.data.price * item.count),
+                    selectedCurrency
+                  )}
+                </div>
+                <div id="cart-add-btn-sec">
+                  <button onClick={() => removeItem(item.data.id)}>-</button>
+                  <span>{item.count}</span>
+                  <button onClick={() => addItem(item.data.id)}>+</button>
+                </div>
+                <div>
+                  {convertSelectedCurrency(item.data.price, selectedCurrency)}
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <div className="no-data">No Items in the Cart</div>
+        )}
       </div>
     </div>
   );

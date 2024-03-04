@@ -1,9 +1,9 @@
 import { appIcon } from "../../assets/images/images";
 import "./logoStyle.css";
 appIcon;
-const Logo = ({ size }) => {
+const Logo = ({ size, onClick }) => {
   return (
-    <div id="logo-mainWrapper">
+    <div id="logo-mainWrapper" onClick={onClick}>
       <img
         src={appIcon}
         alt="app-logo"

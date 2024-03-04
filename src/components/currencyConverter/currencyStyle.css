@@ -1,0 +1,13 @@
+#currecy-converter-mainWrapper > select {
+  border: none;
+  background-color: transparent;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: var(--font-400);
+}
+#currecy-converter-mainWrapper > select > option {
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

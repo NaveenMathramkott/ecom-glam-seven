@@ -11,7 +11,7 @@ export const useDebounce = (initialValue, delay = 300) => {
   return debouncedValue;
 };
 
-export const useFetch = ({ url, method, body }) => {
+export const useFetch = (url, method) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -24,7 +24,10 @@ export const useFetch = ({ url, method, body }) => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await axios(method, url, body);
+      const response = await axios({
+        method: method,
+        url: url,
+      });
       setData(response.data);
     } catch (error) {
       setError(error);

@@ -45,6 +45,7 @@
 
 .cart-item-data-left > img {
   width: 8rem;
+  height: 5rem;
   object-fit: contain;
   margin-right: 2rem;
 }

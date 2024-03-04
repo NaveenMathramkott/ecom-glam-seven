@@ -16,7 +16,7 @@ const BannerCard = () => {
         <button>SHOP NOW</button>
       </div>
       <div className="banner-right-section">
-        <img src={shoeImg} />
+        <img src={shoeImg} alt="ShoeImage" />
       </div>
     </div>
   );
