@@ -1,19 +1,27 @@
 import "./homeStyle.css";
-import Hero from "../../sections/home/hero/Hero.jsx";
-import SearchInput from "../../components/searchInput/SearchInput.jsx";
-import { useState } from "react";
-import Layout from "../../components/layout/Layout.jsx";
-import BestSellerPage from "../../sections/home/bestSeller/BestSellerPage.jsx";
-import BannerCard from "../../sections/home/banner/BannerCard.jsx";
-import CustomerCare from "../../sections/home/customerCare/CustomerCare.jsx";
-import FeaturedProduct from "../../sections/home/featuredProduct/FeaturedProduct.jsx";
+import { useFetch } from "../../hooks/hooks.js";
+import React from "react";
+const Hero = React.lazy(() => import("../../sections/home/hero/Hero.jsx"));
+const SearchInput = React.lazy(() =>
+  import("../../components/searchInput/SearchInput.jsx")
+);
+const Layout = React.lazy(() => import("../../components/layout/Layout.jsx"));
+const BestSellerPage = React.lazy(() =>
+  import("../../sections/home/bestSeller/BestSellerPage.jsx")
+);
+const BannerCard = React.lazy(() =>
+  import("../../sections/home/banner/BannerCard.jsx")
+);
+const CustomerCare = React.lazy(() =>
+  import("../../sections/home/customerCare/CustomerCare.jsx")
+);
+const FeaturedProduct = React.lazy(() =>
+  import("../../sections/home/featuredProduct/FeaturedProduct.jsx")
+);
 
 const HomePage = () => {
-  const [option, setOption] = useState([]);
+  const products = useFetch(`${import.meta.env.VITE_BASE_URL}/products`, "GET");
 
-  const searchFnc = (data) => {
-    setOption([...option, data]);
-  };
   return (
     <Layout title={`E-comm.ae shop online fashion with Glam seven`}>
       <div>
@@ -22,7 +30,7 @@ const HomePage = () => {
       <div className="spacer-top">
         <BestSellerPage />
       </div>
-      <div className="spacer">
+      <div className="spacer banner">
         <BannerCard />
       </div>
       <div className="spacer-bottom">
@@ -32,7 +40,7 @@ const HomePage = () => {
         <FeaturedProduct />
       </div>
       <div className="spacer-search-input">
-        <SearchInput onbtnClick={(data) => searchFnc(data)} options={option} />
+        <SearchInput data={products.data} />
       </div>
     </Layout>
   );

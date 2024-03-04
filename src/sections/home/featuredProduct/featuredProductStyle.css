@@ -7,7 +7,7 @@
 }
 #featured-product-mainWrapper > span {
   font-weight: var(--font-600);
-  font-size: 22px;
+  font-size: 2rem;
 }
 
 .featured-product-list {
@@ -19,7 +19,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding: 10px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .featured-product-list::-webkit-scrollbar {

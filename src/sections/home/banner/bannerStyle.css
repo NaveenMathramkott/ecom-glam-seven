@@ -1,20 +1,20 @@
 .banner-mainWrapper {
-  height: 400px;
+  height: 500px;
   background-color: var(--primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   position: relative;
-  padding: 0 160px;
+  padding: 0 10rem;
 }
 
 .banner-right-section > img {
-  width: 40rem;
-  height: 28rem;
+  width: 47rem;
+  height: 35rem;
   position: absolute;
-  top: -70px;
-  right: 100px;
+  top: -100px;
+  right: 10px;
   transition: all ease-in-out 3s;
 }
 
@@ -25,12 +25,12 @@
 #banner-header {
   color: var(--white);
   font-weight: var(--font-500);
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 #banner-description {
   color: var(--white);
   font-weight: var(--font-400);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .banner-left-section > button {
   border: none;
@@ -38,14 +38,19 @@
   color: var(--white);
   border-bottom: 1px solid var(--white);
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: var(--font-600);
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1230px) {
+  .banner-mainWrapper {
+    padding: 0 3rem;
+  }
   .banner-right-section > img {
     width: 28rem;
     height: 28rem;
     position: absolute;
-    top: -50px;
+    top: -90px;
     right: 10px;
     transition: all ease-in-out 3s;
   }
@@ -53,7 +58,7 @@
 @media screen and (max-width: 970px) {
   .banner-right-section > img {
     width: 20rem;
-    height: 10rem;
+    height: 14rem;
     position: absolute;
     top: -20px;
     right: 0px;
@@ -80,8 +85,11 @@
     width: 14rem;
     height: 10rem;
     position: absolute;
-    top: -60px;
+    top: -130px;
     right: 0px;
     transition: all ease-in-out 3s;
+  }
+  .banner-left-section > button {
+    margin-top: 1rem;
   }
 }

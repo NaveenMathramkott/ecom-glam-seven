@@ -1,0 +1,10 @@
+#page-not-found-mainWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+#page-not-found-mainWrapper > span {
+  font-size: 2rem;
+  font-weight: var(--font-500);
+}

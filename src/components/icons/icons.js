@@ -1,5 +1,4 @@
 import { FaRegUser } from "react-icons/fa";
-import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoIosSearch } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
@@ -10,11 +9,12 @@ import { FaHeart } from "react-icons/fa";
 import { FaShippingFast } from "react-icons/fa";
 import { RiRefund2Line } from "react-icons/ri";
 import { MdSupportAgent } from "react-icons/md";
+import { PiShoppingCartSimpleBold } from "react-icons/pi";
 
 export {
   TiSocialFacebook,
   FaRegUser,
-  MdOutlineShoppingCart,
+  PiShoppingCartSimpleBold,
   IoIosSearch,
   GiHamburgerMenu,
   IoMdClose,

@@ -1,15 +1,24 @@
+import { useCurrency } from "../../context/currencyProvider";
+import { convertSelectedCurrency, roundToTwo } from "../../utils/utils";
 import "./paymentCardStyle.css";
+import toast from "react-hot-toast";
 
-const PaymentCard = ({ subTotal = "$677", coupon, total = "697" }) => {
+const PaymentCard = ({ subTotal = 0, coupon, shipCharge = 0 }) => {
+  const [selectedCurrency] = useCurrency();
+
+  const total = subTotal + shipCharge;
+
   return (
     <div id="payment-card-mainWrapper">
       <div>
         <span>Subtotal</span>
-        <span>{subTotal}</span>
+        <span>
+          {convertSelectedCurrency(roundToTwo(subTotal), selectedCurrency)}
+        </span>
       </div>
       <div>
         <span>Shipping fee</span>
-        <span>{`$${20}`}</span>
+        <span>{convertSelectedCurrency(shipCharge, selectedCurrency)}</span>
       </div>
       <div>
         <span>Coupon</span>
@@ -17,9 +26,13 @@ const PaymentCard = ({ subTotal = "$677", coupon, total = "697" }) => {
       </div>
       <div>
         <span>TOTAL</span>
-        <span>{`$${total}`}</span>
+        <span>
+          {convertSelectedCurrency(roundToTwo(total), selectedCurrency)}
+        </span>
       </div>
-      <button>Check Out</button>
+      <button onClick={() => toast.success(`Checkout Completed`)}>
+        Check Out
+      </button>
     </div>
   );
 };

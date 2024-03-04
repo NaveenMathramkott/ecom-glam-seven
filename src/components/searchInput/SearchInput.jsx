@@ -1,48 +1,62 @@
 import { useEffect, useState } from "react";
 import "./searchInputStyle.css";
+import { textShorter } from "../../utils/utils";
+import { useDebounce } from "../../hooks/hooks";
+import { useNavigate } from "react-router-dom";
 
-const SearchInput = ({
-  onbtnClick,
-  onClick,
-  placeHolder = "Search query...",
-  options,
-}) => {
+const SearchInput = ({ placeHolder = "Search query...", data }) => {
+  const navigate = useNavigate();
   const [searchText, setSearchText] = useState("");
+  const [debouncedValue] = useDebounce(searchText, 500);
+  const [options, setOptions] = useState([]);
   const [showOption, setShowOption] = useState(false);
 
   useEffect(() => {
-    if (options?.length > 0) {
-      setShowOption(true);
-    }
-    return () => setShowOption(false);
-  }, [options]);
+    onSubmit();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedValue]);
 
-  const onInputChange = (e) => {
-    setSearchText(e.target.value);
-    if (!e.target.value) {
+  const onInputChange = (searchValue) => {
+    if (!searchValue) {
       setShowOption(false);
+      setOptions([]);
     }
+    setSearchText(searchValue);
   };
 
   const onSubmit = () => {
-    onbtnClick(searchText);
+    if (!searchText) {
+      setShowOption(false);
+      return null;
+    } else {
+      if (data instanceof Array) {
+        const option = data?.filter((item) =>
+          item.title.toLowerCase().includes(searchText)
+        );
+        setOptions(option);
+      }
+    }
   };
+
   return (
     <div id="search-input-mainWrapper">
       <input
         placeholder={placeHolder}
-        onChange={(e) => onInputChange(e)}
+        onChange={(e) => onInputChange(e.target.value)}
         value={searchText}
       />
       <button onClick={onSubmit} disabled={!searchText}>
         Search
       </button>
       <div>
-        {showOption && (
+        {(options?.length > 0 || showOption) && (
           <div id="search-input-option">
-            {options.map((itm) => (
-              <div key={itm} onClick={() => onClick(itm)}>
-                {itm}
+            {options?.map((itm) => (
+              <div
+                key={itm?.id}
+                onClick={() => navigate(`/product/${itm?.id}`, { state: itm })}
+              >
+                {textShorter(itm.title)}
               </div>
             ))}
           </div>

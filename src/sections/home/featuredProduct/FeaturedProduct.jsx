@@ -1,22 +1,28 @@
 import FeaturedProductCard from "../../../components/featuredProduct/FeaturedProductCard";
+import { FeaturedSkeleton } from "../../../components/skeleton/Skeleton";
+import { useFetch } from "../../../hooks/hooks";
 import "./featuredProductStyle.css";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedProduct = () => {
+  const navigate = useNavigate();
+  const products = useFetch(`${import.meta.env.VITE_BASE_URL}/products`, "GET");
+
   return (
     <div id="featured-product-mainWrapper">
       <span>FEATURED PRODUCTS</span>
       <div className="featured-product-list">
-        {[...Array(20)].map((itm) => (
-          <FeaturedProductCard
-            key={itm}
-            name={`Blue Swade Nike Sneakers`}
-            photo={
-              "https://i.pinimg.com/564x/cb/e7/be/cbe7be2e3798058777a9e87ca4a02bc7.jpg"
-            }
-            price={2234}
-            maxPrice={3455}
-          />
-        ))}
+        {products?.loading
+          ? [...Array(5)].map((itm, ind) => <FeaturedSkeleton key={ind} />)
+          : products?.data?.map((item) => (
+              <FeaturedProductCard
+                key={item.id}
+                data={item}
+                onClick={() =>
+                  navigate(`/product/${item?.id}`, { state: item })
+                }
+              />
+            ))}
       </div>
     </div>
   );

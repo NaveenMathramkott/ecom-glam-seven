@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./layoutStyle.css";
+import { Toaster } from "react-hot-toast";
 
 const Layout = ({ children, title, description, keywords, author }) => {
   return (
@@ -13,7 +14,11 @@ const Layout = ({ children, title, description, keywords, author }) => {
         <meta name="author" content={author} />
       </Helmet>
       <Header />
-      <main className="layout-mainWrapper">{children}</main>
+      <main className="layout-mainWrapper">
+        <Toaster position="bottom-right" />
+        {children}
+      </main>
+
       <Footer />
     </>
   );
@@ -22,7 +27,7 @@ const Layout = ({ children, title, description, keywords, author }) => {
 Layout.defaultProps = {
   title: "E-com Glam-seven",
   description: "React JS E-com",
-  keywords: "react,css,frontend,ecom,design",
+  keywords: "reactjs,css3,frontend,ecommerce,web-design",
   author: "naveenmathramkott",
 };
 export default Layout;
